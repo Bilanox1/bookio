@@ -66,7 +66,7 @@ export class UpdateBookDto {
 
   @IsBoolean()
   @IsOptional()
-  isNew?: boolean;
+  isNews?: boolean;
 
   @IsBoolean()
   @IsOptional()

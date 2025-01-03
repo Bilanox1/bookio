@@ -11,7 +11,18 @@ import { MailModule } from './mail/mail.module';
 
 @Module({
   imports: [
-  
+    MongooseModule.forRoot(
+      'mongodb+srv://aurabilanox:bb4aqlmeJEbdAJaT@cluster0.nph0r.mongodb.net/library',
+    ),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    BookModule,
+    UploadsModule,
+    BorrowedBookModule,
+    AuthModule,
+    MailModule,
+
   ],
   controllers: [AppController],
   providers: [AppService],

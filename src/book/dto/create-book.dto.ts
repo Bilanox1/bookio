@@ -72,7 +72,7 @@ export class CreateBookDto {
 
   @IsBoolean()
   @IsOptional()
-  isNew?: boolean;
+  isNews?: boolean;
 
   @IsBoolean()
   @IsOptional()

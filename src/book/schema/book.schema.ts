@@ -62,7 +62,7 @@ export class Book {
   language?: string;
 
   @Prop()
-  isNew?: boolean;
+  isNews?: boolean;
 
   @Prop()
   isBestseller?: boolean;
