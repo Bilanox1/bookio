@@ -18,7 +18,7 @@ import { UpdateBookDto } from './dto/update-book.dto';
 import { UploadsService } from 'src/uploads/uploads.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Express } from 'express';
-import { TransformDataInterceptor } from 'src/interceptors/transform-data.interceptor';
+import { TransformDataInterceptor } from 'src/interceptors/transformdata.interceptor';
 import { AuthGuard } from 'src/guards/auth/auth.guard';
 import { AdminGuard } from 'src/guards/auth/admin.guard';
 // import { AuthGuard } from '../auth/auth.guard'; // Exemple d'authentification
