@@ -18,7 +18,7 @@ import { Book, BookDocument } from 'src/book/schema/book.schema';
 import { Model } from 'mongoose';
 import { AuthGuard } from 'src/guards/auth/auth.guard';
 
-@Controller('borrowed-books')
+@Controller('api/borrowed-books')
 export class BorrowedBookController {
   constructor(private readonly borrowedBookService: BorrowedBookService) {}
 

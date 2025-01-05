@@ -11,9 +11,28 @@ import { MailModule } from './mail/mail.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'mongodb+srv://aurabilanox:bb4aqlmeJEbdAJaT@cluster0.nph0r.mongodb.net/library',
-    ),
+    MongooseModule.forRootAsync({
+      useFactory: async () => {
+        try {
+          console.log('Connecting to the database...');
+          return {
+            uri: 'mongodb+srv://aurabilanox:bb4aqlmeJEbdAJaT@cluster0.nph0r.mongodb.net/library',
+            connectionFactory: (connection) => {
+              connection.on('connected', () => {
+                console.log('✅ Successfully connected to MongoDB');
+              });
+              connection.on('error', (error) => {
+                console.error('❌ Database connection error:', error);
+              });
+              return connection;
+            },
+          };
+        } catch (error) {
+          console.error('❌ Failed to connect to the database:', error);
+          throw error;
+        }
+      },
+    }),
     ConfigModule.forRoot({
       isGlobal: true,
     }),
@@ -22,11 +41,8 @@ import { MailModule } from './mail/mail.module';
     BorrowedBookModule,
     AuthModule,
     MailModule,
-
   ],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
-//test
-

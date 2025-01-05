@@ -23,7 +23,7 @@ import { AuthGuard } from 'src/guards/auth/auth.guard';
 import { AdminGuard } from 'src/guards/auth/admin.guard';
 // import { AuthGuard } from '../auth/auth.guard'; // Exemple d'authentification
 
-@Controller('books')
+@Controller('api/books')
 export class BookController {
   constructor(
     private readonly bookService: BookService,
